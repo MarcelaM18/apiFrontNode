@@ -37,7 +37,7 @@ const categoriaPut = async (req, res = response) => {
         mensaje = "La categoría no fue encontrada";
       }
     }
-<<<<<<< HEAD
+
   } catch (error) {
     console.error(error);
     mensaje = error.message;
@@ -64,7 +64,7 @@ const categoriaPost = async (req, res = response) => {
         console.error(Object.values(error.errors).map(val => val.message));
         mensaje = Object.values(error.errors).map(val => val.message);
       }
-=======
+
     const {nombre, estado, observacion} = req.body
     let mensaje = ''
     try{
@@ -85,7 +85,7 @@ const categoriaPost = async (req, res = response) => {
     }catch(error){
         console.error(error)
         mensaje = error.message
->>>>>>> 4c4878074eb2dcc5daa4c97a3d239d518fba73de
+
     }
     console.log(mensaje);
   }
