@@ -95,21 +95,7 @@ const categoriaPost = async (req, res = response) => {
   });
 };
 
-const categoriaDelete = async (req, res = response) => {
-  const { _id } = req.body;
-  let mensaje = '';
-
-  try {
-    const categoria = await Categoria.deleteOne({ _id: _id });
-    mensaje = 'La eliminación se efectuó exitosamente.';
-  } catch (error) {
-    mensaje = 'Se presentaron problemas en la eliminación.';
-  }
-
-  res.json({
-    msg: mensaje
-  });
-};
+}
 
 const categoriaPut2 = async (req, res = response) => {
   const id = req.params.id;
@@ -136,13 +122,12 @@ const categoriaPut2 = async (req, res = response) => {
   res.json({
     msg: mensaje,
   });
-};
+}
 
 
 module.exports = {
   categoriaGet,
   categoriaPost,
   categoriaPut,
-  categoriaDelete,
   categoriaPut2
-};
+}
