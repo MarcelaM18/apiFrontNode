@@ -1,19 +1,6 @@
 const { response } = require('express');
 const Compra = require('../models/compra');
-const multer = require('multer');
 
-// Configurar el almacenamiento de Multer
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, 'uploads/'); // Directorio donde se guardarán las fotos adjuntas (debes asegurarte de que el directorio existe)
-  },
-  filename: function (req, file, cb) {
-    cb(null, Date.now() + '-' + file.originalname); // Nombre del archivo
-  }
-});
-
-// Crear el middleware de Multer
-const upload = multer({ storage: storage });
 
 const compraGet = async (req, res = response) => {
   const _id = req.query.id;
